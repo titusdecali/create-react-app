@@ -1,5 +1,6 @@
 import "./App.css";
 import { usePrivy } from "@privy-io/react-auth";
+import SendTransactionButton from "./components/send";
 
 function App() {
   const { ready, authenticated, user, login, logout } = usePrivy();
@@ -16,6 +17,9 @@ function App() {
         {/* If the user is authenticated, show the user object and a logout button */}
         {ready && authenticated ? (
           <div>
+
+            <SendTransactionButton />
+
             <textarea
               readOnly
               value={JSON.stringify(user, null, 2)}
